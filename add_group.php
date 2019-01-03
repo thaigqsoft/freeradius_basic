@@ -24,9 +24,11 @@ if($_POST['Submit']=="Submit"){
    
     $conn->close();
 
-    echo "<br><a href='index.php'>INDEX</a><br>";
+    echo "<br><br><a href='index.php'>INDEX</a><br>";
 }
 ?>
+<h1>ADD GROUP </h1>
+<br><br>
 <form action="add_group.php" method="post">
   Group name:
   <input type="text" name="group_name" value=""><br><br>
