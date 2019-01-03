@@ -2,12 +2,15 @@
 include("config.php");
 if($_POST['Submit']=="Submit"){
 
+    $download_db=$_POST['download']*1000000;
+    $upload_db=$_POST['upload']*1000000;
+
     $sql1 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-                       VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Down',':=','".$POST['download']."' )";
+                       VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Down',':=','$download_db' )";
      mysqli_query($conn, $sql1);
 
      $sql2 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-                        VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Up',':=','".$POST['upload']."' )";
+                        VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Up',':=','$upload_db' )";
      mysqli_query($conn, $sql2);
 
       $sql3 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
