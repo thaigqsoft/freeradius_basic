@@ -6,19 +6,19 @@ if($_POST['Submit']=="Submit"){
     $upload_db=$_POST['upload']*1000000;
 
     $sql1 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-                       VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Down',':=','$download_db' )";
+                       VALUES ( '".$_POST['group_name']."','WISPr-Bandwidth-Min-Down',':=','$download_db' )";
      mysqli_query($conn, $sql1) or   die('Could not connect: ' . mysqli_error());
 
      $sql2 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-                        VALUES ( '".$POST['group_name']."','WISPr-Bandwidth-Min-Up',':=','$upload_db' )";
+                        VALUES ( '".$_POST['group_name']."','WISPr-Bandwidth-Min-Up',':=','$upload_db' )";
      mysqli_query($conn, $sql2) or   die('Could not connect: ' . mysqli_error());
 
       $sql3 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-                       VALUES ( '".$POST['group_name']."','WISPr-Redirection-URL',':=','".$POST['url']."' )";
+                       VALUES ( '".$_POST['group_name']."','WISPr-Redirection-URL',':=','".$_POST['url']."' )";
      mysqli_query($conn, $sql3) or   die('Could not connect: ' . mysqli_error());
  
      $sql4 = "INSERT INTO radgroupreply(groupname,attribute,op,value)  
-     VALUES ( '".$POST['group_name']."','Mikrotik-Address-List',':=','".$POST['adrr_list']."' )";
+     VALUES ( '".$_POST['group_name']."','Mikrotik-Address-List',':=','".$_POST['adrr_list']."' )";
      mysqli_query($conn, $sql4) or   die('Could not connect: ' . mysqli_error());
 
    
