@@ -29,7 +29,7 @@ if($_POST['Submit']=="Submit"){
 ?>
 <form action="add_group.php" method="post">
   Group name:
-  <input type="text" name="group_name" value=""><br>
+  <input type="text" name="group_name" value=""><br><br>
   Download:
   <input type="text" name="download" value="">M<br><br>
   UPload:
