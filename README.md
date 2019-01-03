@@ -1,2 +1,2 @@
 # freeradius_basic
-ตัวอย่างโค๊ด freeradius
+ตัวอย่าง code freeradius
