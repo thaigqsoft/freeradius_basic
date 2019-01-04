@@ -18,7 +18,7 @@ if($_POST['Submit']=="Submit"){
 ?>
 <h1>ADD USER </h1>
 <br><br>
-<form action="add_group.php" method="post">
+<form action="add_user.php" method="post">
   User name:
   <input type="text" name="username" value=""><br><br>
   Pass:
