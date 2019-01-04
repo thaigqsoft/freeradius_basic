@@ -9,6 +9,7 @@ if ($_POST['Submit'] == "Submit") {
 
     $sql2 = "INSERT INTO radusergroup(groupname,username,priority)
      VALUES ( '" . $_POST['group_name'] . "',':=','" . $_POST['username'] . "','1' )";
+    print $sql2;
     mysqli_query($conn, $sql2) or die('Could not connect: ' . mysqli_error());
 
     $conn->close();
