@@ -25,20 +25,17 @@ mysqli_query($conn, $sql1) or   die('Could not connect: ' . mysqli_error());
   <input type="text" name="username" value=""><br><br>
   Pass:
   <input type="text" name="pass" value=""><br><br>
-  <select name="group_name" size="15">
-  <option>text1</option>
+  <select name="group_name" >
+ 
   <?php
   $sql = "SELECT * FROM radusergroup group by groupname order by groupname";
   $query = mysqli_query($conn,$sql);
  
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
- {
- ?>
+ { ?>
   <option value="<?php echo $result["groupname"];?>"><?php echo $result["groupname"];?></option>
  
-<?php
- 
-}
+<?php }
  
 ?>
 </select>
