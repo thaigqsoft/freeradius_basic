@@ -28,7 +28,7 @@ mysqli_query($conn, $sql1) or   die('Could not connect: ' . mysqli_error());
   <select name="group_name" >
  
   <?php
-  $sql = "SELECT * FROM radusergroup group by groupname order by groupname";
+  $sql = "SELECT * FROM radgroupreply group by groupname order by groupname";
   $query = mysqli_query($conn,$sql);
  
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -38,6 +38,6 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 <?php }
  
 ?>
-</select>
+</select><br><br>
   <input type="submit" name="Submit"  value="Submit">
 </form>
