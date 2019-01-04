@@ -8,7 +8,9 @@ if($_POST['Submit']=="Submit"){
                        VALUES ( '".$_POST['username']."','Cleartext-Password',':=','".$_POST['pass']."' )";
      mysqli_query($conn, $sql1) or   die('Could not connect: ' . mysqli_error());
 
-      
+     $sql1 = "INSERT INTO radusergroup(groupname,username,priority)  
+     VALUES ( '".$_POST['group_name']."',':=','".$_POST['username']."','1' )";
+mysqli_query($conn, $sql1) or   die('Could not connect: ' . mysqli_error());   
 
    
     $conn->close();
@@ -23,5 +25,22 @@ if($_POST['Submit']=="Submit"){
   <input type="text" name="username" value=""><br><br>
   Pass:
   <input type="text" name="pass" value=""><br><br>
+  <select name="group_name" size="15">
+  <option>text1</option>
+  <?php
+  $sql = "SELECT * FROM radusergroup group by groupname order by groupname";
+  $query = mysqli_query($conn,$sql);
+ 
+while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
+ {
+ ?>
+  <option value="<?php echo $result["groupname"];?>"><?php echo $result["groupname"];?></option>
+ 
+<?php
+ 
+}
+ 
+?>
+</select>
   <input type="submit" name="Submit"  value="Submit">
 </form>
