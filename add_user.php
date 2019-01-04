@@ -8,8 +8,8 @@ if ($_POST['Submit'] == "Submit") {
     mysqli_query($conn, $sql1) or die('Could not connect: ' . mysqli_error());
 
     $sql2 = "INSERT INTO radusergroup(groupname,username,priority)
-     VALUES ( '" . $_POST['group_name'] . "',':=','" . $_POST['username'] . "','1' )";
-    print $sql2;
+     VALUES ( '" . $_POST['group_name'] . "','" . $_POST['username'] . "','1' )";
+
     mysqli_query($conn, $sql2) or die('Could not connect: ' . mysqli_error());
 
     $conn->close();
