@@ -1,14 +1,15 @@
 <?php
 include "config.php";
+
 if ($_POST['Submit'] == "Submit") {
 
     $sql1 = "INSERT INTO radcheck(username,attribute,op,value)
                        VALUES ( '" . $_POST['username'] . "','Cleartext-Password',':=','" . $_POST['pass'] . "' )";
     mysqli_query($conn, $sql1) or die('Could not connect: ' . mysqli_error());
 
-    $sql1 = "INSERT INTO radusergroup(groupname,username,priority)
+    $sql2 = "INSERT INTO radusergroup(groupname,username,priority)
      VALUES ( '" . $_POST['group_name'] . "',':=','" . $_POST['username'] . "','1' )";
-    mysqli_query($conn, $sql1) or die('Could not connect: ' . mysqli_error());
+    mysqli_query($conn, $sql2) or die('Could not connect: ' . mysqli_error());
 
     $conn->close();
 
